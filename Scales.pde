@@ -2,7 +2,6 @@ void setup (){
   size (600,600); 
 }
 
-
 void draw() {
   
   int diam = 0;
@@ -15,16 +14,12 @@ void draw() {
     r-=227/700.0;
   }
   
-
-  
   for (int y = 0; y <= 600; y = y + 55){
     for (int x = 0; x <= 600; x = x + 55){
      peacock(x, y);
     }
   }
-
 }
-
 
 void peacock(int x, int y){
   
