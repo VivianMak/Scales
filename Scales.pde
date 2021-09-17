@@ -40,5 +40,5 @@ void peacock(int x, int y){
   ellipse(26 + x,25 + y,35,35);
   
   fill(31, 33, 171);
-  arc(26 + x, 25 + y, 25, 25, 0, 5.5, PIE);
+  arc(26 + x, 25 + y, 25, 25, 0, 5.5, PI);
 }
