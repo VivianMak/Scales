@@ -1,75 +1,53 @@
-int startX = 200;
-int startY = 300;
-int endX = 0;
-int endY = 150;
-
-void setup() {
-  size(500, 500);
-
+void setup (){
+  size (600,600); 
 }
+
 
 void draw() {
   
-  background(87, 150, 148);
-  strokeWeight(4);
-  frameRate(7);
-  
-  /*
   int diam = 0;
-  float b = 227;
+  float r = 227;
+  float g = 200;
+  float b = 180;
   noFill();
-  while(diam < 550){
-    stroke(0,0,b);
-    circle(0,500,diam);
+  while(diam < 601){
+    stroke(r,g,b);
+    rect(0,0,diam, diam);
     diam++;
-    b-=227/700.0;
+    r-=227/700.0;
+    g-=200/700.0;
+    b-=180/700.0;
   }
-  */
-  stroke(214,231,212);
-  while (startX < 500) {
-    endX = startX + (int)(Math.random()*25)-10;
-    endY = startY + (int)(Math.random()*10)-9;
-    line(startX, startY, endX, endY);
-    startX = endX;
-    startY = endY;
+  
+
+  
+  for (int y = 0; y <= 600; y = y + 55){
+    for (int x = 0; x <= 600; x = x + 55){
+     peacock(x, y);
+    }
   }
- noStroke();
-  
-  //wand
-  fill(135, 100, 39);
-  triangle(200,300, 147,425, 160,425);
-  
-  //VOLDERMORT 
-  fill(3,77,88);
-  triangle(100,355, 75,475, 175,475);
-  
-  fill(194,193,196);
-  circle(100,355,125);
-  //make gradient
-  
-  //eyes
-  fill(50,46,57);
-  //circle();
-  //circle();
-  
-  //nose: \/
-  //line();
-  //line();
-  
-  //mouth??
-  
-  //wand colors: 103,192,92; outline:206,247,176
+
 }
 
-void mousePressed() {
-  
-  fill(245,244,216);
-  triangle(200,300, 170,350, 173,350);
-  
-  startX = 200;
-  startY = 300;
-  endX = 0;
-  endY = 150;
 
-  redraw();
+void peacock(int x, int y){
+  
+  fill(41, 140, 41);
+  strokeWeight(4);
+  stroke(56, 235, 74);
+  beginShape();
+  curveVertex(25 + x, 70 + y);
+  curveVertex(25 + x, 70 + y);
+  curveVertex(50 + x, 10 + y);
+  curveVertex(1 + x, 10 + y);
+  curveVertex(25 + x, 70 + y);
+  curveVertex(25 + x, 70 + y);
+  endShape();
+
+  noStroke();
+  fill(76, 183, 237);
+  ellipse(26 + x,25 + y,35,35);
+  
+  fill(31, 33, 171);
+  arc(26 + x, 25 + y, 25, 25, 0, 5.5, PIE);
 }
